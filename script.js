@@ -17,9 +17,16 @@ function handleWindowTap(element) {
 
     //move to top on open
 function openWindow(element) {
-  element.style.display = "flex";
-  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.display = "block";
+  biggestIndex++;
   element.style.zIndex = biggestIndex;
+}
+    // Windows YAY
+function initializeWindow(elementName) {
+  var screen = document.querySelector("#" + elementName)
+  addWindowTapHandling(screen)
+  //makeClosable(elementName)
+  dragElement(screen)
 }
 
 
@@ -68,8 +75,8 @@ var welcomeScreenOpen = document.querySelector("#welcomeopen")
 var contactScreenOpen = document.querySelector("#contactopen")
 
 // Top bar
-initializeWindow(welcomeScreen);
-initializeWindow(contactScreen)
+initializeWindow("welcome");
+initializeWindow("contact")
 
 
     // close event listenrs
@@ -90,11 +97,6 @@ contactScreenOpen.addEventListener("click", function() {
   openWindow(contactScreen);
 });
 
-
-    // Open Window
-function openWindow(element) {
-  element.style.display = "block"
-}
 
     // Close window
 function closeWindow(element) {
