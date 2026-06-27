@@ -1,37 +1,102 @@
 
+
+// Window Taps
+var biggestIndex = 1;
+var topBar = document.querySelector("#top")
+    // Tap listener
+function addWindowTapHandling(element) {
+  element.addEventListener("mousedown", () =>
+    handleWindowTap(element)
+  )
+}
+    //Move to top
+function handleWindowTap(element) {
+  biggestIndex++; 
+  element.style.zIndex = biggestIndex;
+}
+
+    //move to top on open
+function openWindow(element) {
+  element.style.display = "flex";
+  biggestIndex++;  // Increment biggestIndex by 1
+  element.style.zIndex = biggestIndex;
+}
+
+
 // Time
 function updateTime() {
     var ntptime = new Date().toLocaleString();
     var timeT = document.querySelector("#timetext");
     timeT.innerHTML = ntptime;
 }
-
 updateTime();
 setInterval(updateTime, 1000);
 
-var welcomeScreen = document.querySelector("#welcome")
+//Icons
+var selectedIcon = undefined
 
-// Opens/closes
+    // Selected Icons
+function selectIcon(element) {
+    element.classList.add("selected")
+    selectedIcon = element
+}
+
+function deselectIcon(element) {
+  element.classList.remove("selected");
+  selectedIcon = undefined
+}
+
+    // Handle the tap
+function handleIconTap(element) {
+  if (element.classList.contains("selected")) {
+    deselectIcon(element)
+    openWindow(window)
+  } else {
+    selectIcon(element)
+  }
+}
+
+// Windows
+var welcomeScreen = document.querySelector("#welcome")
+var contactScreen = document.querySelector("#contact")
+
+    // Opens/closes
 var welcomeScreenClose = document.querySelector("#welcomeclose")
+var contactScreenClose = document.querySelector("#contactclose")
 
 var welcomeScreenOpen = document.querySelector("#welcomeopen")
+var contactScreenOpen = document.querySelector("#contactopen")
 
-// Open/close event listenrs
+// Top bar
+initializeWindow(welcomeScreen);
+initializeWindow(contactScreen)
+
+
+    // close event listenrs
 welcomeScreenClose.addEventListener("click", function() {
   closeWindow(welcomeScreen);
 });
 
+contactScreenClose.addEventListener("click", function() {
+  closeWindow(contactScreen);
+});
+
+    // Open event listenrs
 welcomeScreenOpen.addEventListener("click", function() {
   openWindow(welcomeScreen);
 });
 
+contactScreenOpen.addEventListener("click", function() {
+  openWindow(contactScreen);
+});
 
-// Open Window
+
+    // Open Window
 function openWindow(element) {
   element.style.display = "block"
 }
 
-// Close window
+    // Close window
 function closeWindow(element) {
     element.style.display = "none"
 }
@@ -39,6 +104,7 @@ function closeWindow(element) {
 
 // Drag
 dragElement(document.getElementById("welcome"));
+dragElement(document.getElementById("contact"));
 
 function dragElement(element) {
 

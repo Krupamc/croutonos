@@ -8,53 +8,109 @@ Blue: #5AB1BB
 Green: #82c885
 Yellow: #F7DD72 
 --> 
+
+<!--Extra ideas:
+Task manager but of my coding abilities
+Timeline of my projects
+GIS Map app
+Weather app
+-->
+
 <head>
     <title>CroutonOS</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
 </head>
-<!--Top Bar-->
-        <div style="position: absolute; bottom: 0%; justify-content: space-between; width: 100%; backdrop-filter: blur(20px); background-color: rgba(1, 1, 1, 0.125); color: #fff;">
-            <p id="welcomeopen" style="cursor: pointer; margin-left: 20px">
+
+    <body class="body">
+        <!--Task Bar-->
+        <div style="position: absolute; bottom: 0%; justify-content: space-between; width: 100%; display: flex; align-items: center;
+                    backdrop-filter: blur(20px); background-color: rgba(1, 1, 1, 0.125); color: #fff;">
+            
+            <p style="cursor: pointer; margin-left: 20px">
                 CroutonOS
             </p>
+            <p style="cursor: pointer; margin-left: 40px">
+                Contact Me!
+            </p>
 
-            <p id="timetext" style="margin-left: 20px;">
+            <p id="timetext" style="margin-right: 20px;">
                 Time
             </p>
+
         </div>
 
-        <!--Time-->
-        <script src="script.js"></script>
-
-
-    <!---->
-    <body style="background-color: #4E6766; font-family: Bookman, URW Bookman L, serif; background-image: url(images/wallpaper.JPG); background-size: cover">
+        <!--Top bar-->
+        <div id="top"
+        style="(styles)">
+        </div>
         
+        <!--Task Bar Icons-->
+        <div id=desktopApps style="padding-top: 64px; ">
+
+                <div id="welcomeopen" style="padding: 16px; width: fit-content; text-align: center;">
+                    <img src="images/welcome.png" width = 76 height = 76 style="border-radius: 32;">
+                    <p style="margin: 0px; color: #fff; ">Welcome!</p>
+                </div>
+
+                <div id="contactopen" style="padding: 16px; width: fit-content; text-align: center;">
+                    <img src="images/email.png" width = 76 height = 76 style="border-radius: 32;">
+                    <p style="margin: 0px; color: #fff; ">Contacts</p>
+                </div>
+        </div>
+
         <!--Welcome-->
-        <div id="welcome" class="window">
+        <div id="welcome" class="window" style="text-align: left;">
             
             <!-- Draging header-->
-            <div id = "welcomeheader">
+            <div id = "welcomeheader" style="text-align: right;">
                 <img src="images/mouse.png" alt="click to move" width="30" height ="30">
             </div>
 
-            <h1 style="margin: 4px;">Welcome to CroutonOS</h1>
+            <h1 style="margin: 4px; text-align: center;">Welcome to CroutonOS</h1>
 
-                <img src="images/me.PNG" style="border-radius: 32px; object-fit: cover;"/>
+                <img src="images/me.PNG" style="border-radius: 32px; object-fit: cover; text-align: center;"/>
 
                 <h2>This is an OS in a website</h2>
                 <h3>Why you ask?</h3>
                 <h4>Just because it is fun</h4>
 
-                <p>Hi, my name is Krupam (No it is not pronounced Crouton) and I am a high schooler at ############################################. (How informative)</p>
-                <p>I am a Cybersecurity Enthusiast, Programmer, Avid Homelabber, Computer Enthusiast, Independent Researcher, Graphic Designer, and Marimba Player.</p>
-                <p>I am a homelabber with a love for anything computer related. Proficient in Windows and familiar with Linux. Cybersecurity enthusiast with experience of CyberPatriots and an internship with NJCCIC. Currently one of the graphic designers for the NJCCIC Student Newsletter.</p>
+                <p>Hi, my name is Krupam (No it is not pronounced Crouton)</p>
+                <p>and I am a high schooler at ###########################.</p>
+                <p>(How informative)</p>
+                <p>I am a Cybersecurity Enthusiast, Programmer, Avid Homelabber,</p>
+                <p>Computer Enthusiast, Independent Researcher, Graphic Designer, and Marimba Player.</p>
+                <p>I am a homelabber with a love for anything computer related. Proficient in Windows</p>
+                <p>and familiar with Linux. Cybersecurity enthusiast with experience of CyberPatriots</p>
+                <p>and an internship with NJCCIC. Currently one of the graphic designers for the NJCCIC Student Newsletter.</p>
 
                 <img src="images/redX.png" alt="close" width="30" height ="30" id="welcomeclose" style="cursor: pointer; margin-left: 97%;" >
             </div>
+            
+        <!-- Contact App -->   
+        <div id="contact" class="window" style="display: none;">
 
-            <script src="script.js"></script>
+            <!-- Draging header-->
+            <div id = "contactheader">
+                <img src="images/mouse.png" alt="click to move" width="30" height ="30">
+            </div>
 
+            <h1>Contacts</h1>
+            <h3>I am open to any questions, comments, concerns, or even if you just want to chat!</h3>
+            <h4>You can find me almost anywhere! But these are my main contact points:</h4>
+            <a href="mailto:krupampatel710@gmail.com">- Email Me! (krupampatel710@gmail.com)</a>
+            <p></p>
+            <a href="https://www.linkedin.com/in/krupam-patel-a5bb593ba" target="_blank" rel="noopener noreferrer">- Linkedin</a>
+            <p></p>
+            <a href="https://www.facebook.com/share/1CS369qEBe/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer">- Facebook</a>
+            <p></p>
+            <a href="https://discord.com" target="_blank" rel="noopener noreferrer">- Discord: krupamcreates</a>
+            <p></p>
+
+            
+            <img src="images/redX.png" alt="close" width="20" height ="20" id="contactclose" style="cursor: pointer; margin-left: 97%;" >
+        </div>
+
+    <script src="script.js"></script>
     </body>
 
     

@@ -9,6 +9,18 @@
     transform: translate(-50%, -50%);
 }
 
+.body {
+    background-color: #4E6766;
+    font-family: Bookman, URW Bookman L, serif;
+    background-image: url(images/wallpaper.JPG);
+    background-size: cover
+}
+
 .text {
-    
+    font-family: Bookman, URW Bookman L, serif;
+}
+
+.selected {
+  background-color: rgba(255,255,255,0.2);
+  border-radius: 12px;  
 }
